@@ -1,0 +1,97 @@
+@import './fonts.scss';
+@import url('https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:where(fieldset[class]) {
+  border: none;
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+input,
+textarea,
+select,
+button {
+  font: inherit;
+}
+
+html,
+body {
+  scrollbar-gutter: stable;
+}
+
+
+html {
+  height: 100%;
+}
+
+label,
+button {
+  cursor: pointer
+}
+
+
+html,
+:has(:target) {
+  scroll-behavior: smooth;
+}
+
+a {
+  text-decoration: none;
+  font-family: inherit;
+  color: inherit;
+}
+
+body {
+  min-height: 100vh;
+}
+
+#root {
+  min-height: 100%;
+}
+
+.container {
+  max-width: 1440px;
+  margin-inline: auto;
+  padding-inline: 15px;
+}
+
+
+
+body {
+  font-family: var(--font-family-basic);
+  font-size: var(--font-size-basic);
+  font-weight: 300 !important;
+  color: var(--color-dark);
+}
+
+#root {
+  font-size: var(--font-size-basic);
+  font-family: car(--font-family-basic);
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+.pointer-events-none {
+  pointer-events: none;
+}
+
+.heart {
+  display: inline-block;
+  animation: heartPulse 1.5s ease infinite normal;
+}

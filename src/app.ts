@@ -1,0 +1,1 @@
+export const WEDDING_TIME_STAMP = 1757151000

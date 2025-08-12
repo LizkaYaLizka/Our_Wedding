@@ -1,0 +1,111 @@
+@keyframes showNav {
+    from {
+        opacity: 0;
+        transform: translateX(-500px);
+    }
+}
+
+@keyframes showNavMobile {
+    from {
+        opacity: 0;
+        transform: translateX(-500px);
+    }
+}
+
+@keyframes showNavMobileRight {
+    from {
+        opacity: 0;
+        transform: translateX(500px);
+    }
+}
+
+@keyframes showShadow {
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes opacityOn {
+    from {
+        opacity: 0;
+
+    }
+
+    to {
+        opacity: 1;
+
+    }
+}
+
+@keyframes opacityOff {
+    to {
+        opacity: 0;
+        transform: scaleX(2);
+    }
+}
+
+@keyframes slideFromTop {
+    from {
+        transform: translateY(-500px);
+    }
+}
+
+@keyframes scaleOn {
+    from {
+        scale: 0;
+    }
+}
+
+@keyframes heartPulse {
+    0% {
+        animation-timing-function: ease-out;
+        transform: scale(1);
+        transform-origin: center center;
+    }
+
+    10% {
+        animation-timing-function: ease-in;
+        transform: scale(0.85);
+    }
+
+    17% {
+        animation-timing-function: ease-out;
+        transform: scale(0.92);
+    }
+
+    33% {
+        animation-timing-function: ease-in;
+        transform: scale(0.81);
+    }
+
+    45% {
+        animation-timing-function: ease-out;
+        transform: scale(1);
+    }
+}
+
+@keyframes ringToFinger {
+    /* 0% {
+        transform:
+            translate(calc(100vw - 100%), -50%);
+    } */
+
+    100% {
+        transform:
+            translate(calc(50% - (100vw - 195px)), 0%);
+    }
+}
+
+
+@keyframes bgBottomRight {
+    to {
+        background-position: bottom right;
+    }
+}
+
+/* @keyframes test {
+    to {
+        bac
+    }
+} */
