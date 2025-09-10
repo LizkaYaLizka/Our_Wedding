@@ -1,11 +1,11 @@
-import { useEffect, useState, type ChangeEvent } from 'react'
+import { useEffect, useState } from 'react'
 import './App.scss'
 import Timer from './timer.tsx'
 import RingSrc from './assets/welcome/ring.png';
 import HandSrc from './assets/welcome/hand.png';
-import RingsSrc from './assets/plan/wedding_rings.svg'
-import PhotoSrc from './assets/plan/wedding_photo.svg'
-import PartySrc from './assets/plan/wedding_party.svg'
+// import RingsSrc from './assets/plan/wedding_rings.svg'
+// import PhotoSrc from './assets/plan/wedding_photo.svg'
+// import PartySrc from './assets/plan/wedding_party.svg'
 import { sendToBot } from './api.ts';
 import { WeddingAnniversary } from './afterTimer.tsx';
 
@@ -14,13 +14,13 @@ import { WeddingAnniversary } from './afterTimer.tsx';
 
 
 function App() {
-  const [alco, setAlco] = useState({ wine: false, vodka: false, cognac: false, whiskey: false, whish: '', music: '' })
-  const onClickSendMessage = () => {
-    const dat = new Date(Date.now())
-    const message = JSON.stringify(alco)
-    sendToBot(`${dat}, --------${message}--------`)
-    setAlco({ ...alco, wine: false, vodka: false, cognac: false, whiskey: false, whish: '', music: '' })
-  }
+  // const [alco, setAlco] = useState({ wine: false, vodka: false, cognac: false, whiskey: false, whish: '', music: '' })
+  // const onClickSendMessage = () => {
+  //   const dat = new Date(Date.now())
+  //   const message = JSON.stringify(alco)
+  //   sendToBot(`${dat}, --------${message}--------`)
+  //   setAlco({ ...alco, wine: false, vodka: false, cognac: false, whiskey: false, whish: '', music: '' })
+  // }
 
   useEffect(() => {
     const dat = new Date(Date.now())
@@ -28,9 +28,9 @@ function App() {
     sendToBot(`${dat}, --------${message}--------`)
   }, [])
 
-  const [isNavAnimationEnd, setIsNavAnimationEnd] = useState(false)
-  const [isWelcomeAnimationEnd, setIsWelcomeAnimationEnd] = useState(true)
-  const isMobile = window.matchMedia('(max-width: 768px)').matches
+  // const [isNavAnimationEnd, setIsNavAnimationEnd] = useState(false)
+  const isWelcomeAnimationEnd = true
+  // const isMobile = window.matchMedia('(max-width: 768px)').matches
   const [isExpired, setIsExpired] = useState(true)
   // const onNavAnimationEndSetIsNavAnimationEnd = () => {
   //   setTimeout(() => {
