@@ -1139,6 +1139,12 @@ header {
 
 .report {
 
+    &__section {
+        opacity: 0;
+        transition: all .5s;
+        animation: opacityOn 8s forwards;
+    }
+
     &-wrapper {
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
         border-radius: 8px;
@@ -1148,6 +1154,18 @@ header {
         justify-content: center;
         gap: 30px;
         flex-direction: column;
+
+        & a {
+            background-color: var(--color-dark);
+            color: var(--color-light);
+            padding: 10px 15px;
+            font-family: var(--font-family-light);
+            border-radius: var(--border-radius);
+
+            @include mobile {
+                font-size: 25px;
+            }
+        }
 
         & button {
             font-size: 30px;
@@ -1203,10 +1221,10 @@ header {
         }
 
         & p {
-            font-size: 30px;
+            font-size: 40px;
 
             @include mobile {
-                font-size: 25px;
+                font-size: 35px;
             }
         }
     }

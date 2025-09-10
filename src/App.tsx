@@ -29,52 +29,52 @@ function App() {
   }, [])
 
   const [isNavAnimationEnd, setIsNavAnimationEnd] = useState(false)
-  const [isWelcomeAnimationEnd, setIsWelcomeAnimationEnd] = useState(false)
+  const [isWelcomeAnimationEnd, setIsWelcomeAnimationEnd] = useState(true)
   const isMobile = window.matchMedia('(max-width: 768px)').matches
-  const [isExpired, setIsExpired] = useState(false)
-  const onNavAnimationEndSetIsNavAnimationEnd = () => {
-    setTimeout(() => {
-      setIsNavAnimationEnd(true)
-    }, 1000)
-  }
-  const onWelcomeAnimationEndSetIsWelcomeAnimationEnd = () => {
-    setTimeout(() => {
-      setIsWelcomeAnimationEnd(true)
-    }, 1000)
-  }
+  const [isExpired, setIsExpired] = useState(true)
+  // const onNavAnimationEndSetIsNavAnimationEnd = () => {
+  //   setTimeout(() => {
+  //     setIsNavAnimationEnd(true)
+  //   }, 1000)
+  // }
+  // const onWelcomeAnimationEndSetIsWelcomeAnimationEnd = () => {
+  //   setTimeout(() => {
+  //     setIsWelcomeAnimationEnd(true)
+  //   }, 1000)
+  // }
 
 
-  const liItemClassList = isNavAnimationEnd
-    ? 'header__item '
-    : 'header__item pointer-events-none'
+  // const liItemClassList = isNavAnimationEnd
+  //   ? 'header__item '
+  //   : 'header__item pointer-events-none'
 
-  const navigation = isMobile
-    ? <nav>
-      <ul className='header__list-mobile container'>
-        <li className="header__item-mobile"><a href="#plan">Мероприятия</a></li>
-        <li className="header__item-mobile"><a href="#whishes">Пожелания</a></li>
-        <li className="header__item-mobile"><a href="">Фотогалерея</a></li>
-      </ul>
-    </nav>
+  // const navigation = isMobile
+  //   ? <nav>
+  //     <ul className='header__list-mobile container'>
+  //       <li className="header__item-mobile"><a href="#plan">Мероприятия</a></li>
+  //       <li className="header__item-mobile"><a href="#whishes">Пожелания</a></li>
+  //       <li className="header__item-mobile"><a href="">Фотогалерея</a></li>
+  //     </ul>
+  //   </nav>
 
-    : <nav>
-      <ul className='header__list container'>
-        <li className={liItemClassList} onAnimationEnd={onNavAnimationEndSetIsNavAnimationEnd}><a href="#plan">Мероприятия</a></li>
-        <li className={liItemClassList} onAnimationEnd={onNavAnimationEndSetIsNavAnimationEnd}><a href="#whishes">Пожелания</a></li>
-        <li className={liItemClassList} onAnimationEnd={onNavAnimationEndSetIsNavAnimationEnd}><a href="">Фотогалерея</a></li>
-      </ul>
-    </nav>
+  //   : <nav>
+  //     <ul className='header__list container'>
+  //       <li className={liItemClassList} onAnimationEnd={onNavAnimationEndSetIsNavAnimationEnd}><a href="#plan">Мероприятия</a></li>
+  //       <li className={liItemClassList} onAnimationEnd={onNavAnimationEndSetIsNavAnimationEnd}><a href="#whishes">Пожелания</a></li>
+  //       <li className={liItemClassList} onAnimationEnd={onNavAnimationEndSetIsNavAnimationEnd}><a href="">Фотогалерея</a></li>
+  //     </ul>
+  //   </nav>
 
 
 
-  const content = isExpired
-    ? <h1>Это случилось!</h1>
-    : <>
-      {isWelcomeAnimationEnd && <header className='header__container'>
+  // const content = isExpired
+  //   ? <h2>Это случилось!</h2>
+  //   : <>
+  {/* {isWelcomeAnimationEnd && <header className='header__container'>
         {navigation}
-      </header>}
+      </header>} */}
 
-      {!isWelcomeAnimationEnd && (
+  {/* {!isWelcomeAnimationEnd && (
         <section className='hero__section section'>
           <div className="container hero__container">
             <h1 className="hero__title" onAnimationEnd={onWelcomeAnimationEndSetIsWelcomeAnimationEnd}>Дорогие Родители, Братья, Сестры, Тёти, Дяди, Друзья! Судьба свела наши сердца…
@@ -82,11 +82,11 @@ function App() {
               как две истории становятся одной..общей <span className='heart'>&#129505;</span></h1>
           </div>
         </section>
-      )}
+      )} */}
 
 
 
-    </>
+  // </>
 
   const currentCounter = isExpired
     ? < WeddingAnniversary weddingDate={new Date('2025-09-06T12:30:00')} />
@@ -99,23 +99,24 @@ function App() {
         <img src={HandSrc} alt="" className='Hand' height={100} />
         <img src={RingSrc} alt="" className='Ring' height={100} />
       </div>
-      <div className='top-wrapper container'>{content}</div>
+      {/* <div className='top-wrapper container'><h2>Это случилось!</h2></div> */}
       {isWelcomeAnimationEnd && <section className='welcome__section'>
         <div className="welcome__container container">
           <h2>Добро пожаловать на наш свадебный сайт!</h2>
-          <p>Здесь начинается история одного большого праздника, в центре которого — наша любовь и счастье. Именно здесь мы хотим поделиться своей радостью с вами, дорогими друзьями и близкими людьми, пригласив вас стать частью нашего особенного события.
+          {/* <p>Здесь начиналась история одного большого праздника, в центре которого — наша любовь и счастье. Именно здесь мы хотим поделиться своей радостью с вами, дорогими друзьями и близкими людьми, пригласив вас стать частью нашего особенного события.
 
             Мы постарались создать уютное пространство, где каждый сможет почувствовать себя желанным гостем. Здесь вы найдете всю необходимую информацию о предстоящей свадьбе, включая программу мероприятия, рекомендации по дресс-коду и даже полезные советы для гостей.
 
             Будьте готовы окунуться в атмосферу романтики, искренности и настоящего семейного тепла. Пусть наши сердца будут открыты друг другу, а улыбки останутся светлыми воспоминаниями навсегда.
 
-            Радостно ждем встречи с каждым из вас в самый важный день нашей жизни!</p>
+            Радостно ждем встречи с каждым из вас в самый важный день нашей жизни!</p> */}
+          <p>Это случилось, дорогие друзья !</p>
         </div>
       </section>}
 
       <div className="main-wrapper">
         {isWelcomeAnimationEnd && currentCounter}
-        {isWelcomeAnimationEnd && <section className='plan__section'>
+        {/* {isWelcomeAnimationEnd && <section className='plan__section'>
           <div className="container">
             <div className="plan__container">
               <h2 className='plan__title' id='plan'>План мероприятия:</h2>
@@ -198,15 +199,15 @@ function App() {
               </div>
             </div>
           </section>
-        }
+        } */}
       </div>
 
       {isWelcomeAnimationEnd && <section className='report__section'>
         <div className="report__container container">
-          <h2>Фотогалерея</h2>
+          <h2>Фото / видео</h2>
           <div className="report-wrapper">
-            <p>В этом разделе будет ссылка на фотографии с нашими счастливыми лицами, но после свадьбы &#128523;</p>
-            <button type='button' disabled>Временно неактивная ссылка  &#8599; </button>
+            <p>Список ссылок будет пополняться</p>
+            <a href="https://disk.yandex.ru/i/mPJP6Dy6FloEfg" target='blank'>Видео из ЗАГСа</a>
           </div>
 
 
